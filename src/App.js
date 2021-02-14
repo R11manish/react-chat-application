@@ -5,13 +5,13 @@ import './App.css';
 
 const App = () => {
     if(!localStorage.getItem('username')) return <LoginForm />
-    
+
     return(
         <ChatEngine
             height="100vh"
             projectID="5730db67-486b-4094-bc52-53cda2bbbf6a"
-            userName="manish"
-            userSecret="123123"
+            userName={localStorage.getItem('username')}
+            userSecret={localStorage.getItem('password')}
             renderChatFeed = {(chatAppProps) => <ChatFeed {...chatAppProps} />} 
         />
     );
